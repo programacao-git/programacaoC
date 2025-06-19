@@ -2,7 +2,7 @@
 
 int main (){
 
-    // Desafio Xadres
+    // Desafio Xadrez
 
     int torre = 1;
     int bispo = 1;
