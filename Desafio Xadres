@@ -7,6 +7,7 @@ int main (){
     int torre = 1;
     int bispo = 1;
     int rainha;
+    int prabaixo, praesquerda;      // variáveis pra movimentação do cavalo
 
     printf("***Movimento da Rainha***\n");
 
@@ -38,7 +39,25 @@ int main (){
         torre++;  // incremento
 
     } while (torre <= 5);
+
+    printf("\n");
+
+    printf("***Movimento do Cavalo***\n");
     
+
+    // simulando o movimento do cavalo usando 'for' e 'while'
+    for ( praesquerda = 0; praesquerda < 1; praesquerda++)   // loop externo
+    {
+
+        while (prabaixo < 2)    // loop interno
+        {
+            printf("Baixo\n");   // imprime 'baixo'
+            prabaixo++;
+        }
+
+        printf("Esquerda\n");   // imprime 'esqueda'
+    
+    }
 
 
 
