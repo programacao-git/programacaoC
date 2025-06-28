@@ -1,36 +1,51 @@
 #include <stdio.h>
 
-#define TAMANHO 10    // Tamanho do tabuleiro (10x10)
+#define LINHAS 10
+#define COLUNAS 10
 
-int tabuleiro[TAMANHO][TAMANHO];
+int main(){
 
-int main() {
+    int tabuleiro[LINHAS][COLUNAS];
+    int navio = 3;
 
-    // Inicializa o tabuleiro com água (0)
-    for (int i = 0; i < TAMANHO; i++) {
-        for (int j = 0; j < TAMANHO; j++) {
+    // iniciando o tabuleiro com água(0)
+    for(int i = 0; i < LINHAS; i++){
+        for(int j = 0; j < COLUNAS; j++){
             tabuleiro[i][j] = 0;
+
+            if(i == j && j < navio)
+            {
+                tabuleiro[i][j] = navio;   // posiciona o navil na diagonal
+            }
+
+            if (i + j == 10 - 1 && i < navio) {    // posicionando o navio na diagonal secundaria
+               tabuleiro[i][j] = navio; 
+            }
+
         }
     }
 
-    // Posicionando o navil na horizontal
-    tabuleiro[2][1] = 3;
-    tabuleiro[2][2] = 3;
-    tabuleiro[2][3] = 3;
+    // posionando o navio na horizontal
+    tabuleiro[6][1] = navio;
+    tabuleiro[6][2] = navio;
+    tabuleiro[6][3] = navio;
 
-    // Posicionando o navil na vertical
-    tabuleiro[6][8] = 3;
-    tabuleiro[5][8] = 3;
-    tabuleiro[4][8] = 3;
+    // posicionando o navio na vertical
+    tabuleiro[7][8] = navio;
+    tabuleiro[6][8] = navio;
+    tabuleiro[5][8] = navio;
 
-    // Exibir o tabuleiro 
-    printf("*Tabuleiro: Batalha Naval \n");
-    for (int i = 0; i < TAMANHO; i++) {
-        for (int j = 0; j < TAMANHO; j++) {
+    // exibir tabuleiro
+    printf("*Tabuleiro: Batalha Naval\n");
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+
             printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
+    
+
 
     return 0;
 }
